@@ -7,7 +7,7 @@ async function sendToMake() {
   responseEl.textContent = "Sending...";
 
   try {
-    const res = await fetch("https://hook.make.com/your-placeholder-webhook", {
+    const res = await fetch("https://hook.us1.make.com/qv4nysn1ilxu1jx7ez67yampsgkpm671", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ persona, copy })
