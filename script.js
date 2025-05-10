@@ -1,9 +1,8 @@
-
 async function sendToMake() {
   const persona = document.getElementById("persona").value;
   const copy = document.getElementById("copy").value;
-
   const responseEl = document.getElementById("response");
+
   responseEl.textContent = "Sending...";
 
   try {
@@ -14,7 +13,16 @@ async function sendToMake() {
     });
 
     const data = await res.json();
-    responseEl.textContent = JSON.stringify(data, null, 2);
+
+    // Assume structured response
+    const { score, reaction, suggestions, purchase_likelihood } = data;
+
+    responseEl.innerHTML = `
+      <strong>Score:</strong> ${score}<br>
+      <strong>Reaction:</strong> ${reaction}<br>
+      <strong>Suggestions:</strong> ${suggestions}<br>
+      <strong>Purchase Likelihood:</strong> ${purchase_likelihood}
+    `;
   } catch (err) {
     responseEl.textContent = "Error: " + err.message;
   }
