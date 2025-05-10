@@ -1,1 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PenGems Message Tester</title>
+</head>
+<body>
+  <h1>PenGems Message Testing Tool</h1>
+
+  <label for="persona">Choose a persona:</label>
+  <select id="persona">
+    <option value="Stacy the Stylish Teacher">Stacy the Stylish Teacher</option>
+    <option value="Claire the Corporate Queen">Claire the Corporate Queen</option>
+    <option value="Sam the Journal Addict">Sam the Journal Addict</option>
+    <option value="Brittany the Bride-to-Be">Brittany the Bride-to-Be</option>
+    <option value="Melissa the Pen Collector">Melissa the Pen Collector</option>
+  </select>
+
+  <br><br>
+
+  <label for="copy">Enter your copy to test:</label><br>
+  <textarea id="copy" rows="6" cols="60"></textarea>
+
+  <br><br>
+
+  <button onclick="sendToMake()">Test Message</button>
+
+  <h2>Response:</h2>
+  <pre id="response"></pre>
+
+  <script src="script.js"></script>
+</body>
+</html>
 
