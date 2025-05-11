@@ -27,3 +27,6 @@ async function sendToMake() {
     responseEl.textContent = "Error: " + err.message;
   }
 }
+const testAll = document.getElementById("testAll").checked;
+
+body: JSON.stringify({ persona, copy, testAll })
