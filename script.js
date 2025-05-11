@@ -1,6 +1,7 @@
 async function sendToMake() {
   const persona = document.getElementById("persona").value;
   const copy = document.getElementById("copy").value;
+  const testAll = document.getElementById("testAll").checked;
   const responseEl = document.getElementById("response");
 
   responseEl.textContent = "Sending...";
@@ -9,12 +10,11 @@ async function sendToMake() {
     const res = await fetch("https://hook.us1.make.com/qv4nysn1ilxu1jx7ez67yampsgkpm671", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ persona, copy })
+      body: JSON.stringify({ persona, copy, testAll })
     });
 
     const data = await res.json();
 
-    // Assume structured response
     const { score, reaction, suggestions, purchase_likelihood } = data;
 
     responseEl.innerHTML = `
@@ -27,6 +27,3 @@ async function sendToMake() {
     responseEl.textContent = "Error: " + err.message;
   }
 }
-const testAll = document.getElementById("testAll").checked;
-
-body: JSON.stringify({ persona, copy, testAll })
